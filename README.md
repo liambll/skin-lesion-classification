@@ -59,7 +59,7 @@ pip install -r requirements.txt
 python models/stacking_model.py --data_path=/path/to/train-test-dataset/ --img_size=512 --n_splits=3 --save_path=/path/to/save/model/
 ```
 Parameters:
-* data_path: path to a folder that contains train and test sets. The train and test sets are available at: https://drive.google.com/file/d/1qpwgM1NSlAWsRoW2kO8bKv5Oqa-QZ32U/view
+* data_path: path to a folder that contains train and test sets
 * img_size: image size to resize to. Smaller img_size leads to faster feature extraction but might lose details.
 * n_splits: number of cross validation fold
 * save_path: path to a folder to save fitted models. Base models will be saved to save_path/base_models, and stacking models will be saved to save_path/stacking_models
@@ -69,7 +69,7 @@ Parameters:
 python models/cnn_model.py --data_path=/path/to/train-test-dataset/ --batch_size=16 --nb_epochs=100 --lr=0.001 --save_path=/path/to/save/model/
 ```
 Parameters:
-* data_path: path to a folder that contains train and test sets. The train and test sets are available at: https://drive.google.com/file/d/1qpwgM1NSlAWsRoW2kO8bKv5Oqa-QZ32U/view
+* data_path: path to a folder that contains train and test sets
 * batch_size: batch_size for model training. Larger batch_size leads to faster training but might cause out-of-memory.
 * nb_epochs: number of epochs for model training
 * lr: learning rate for model training
