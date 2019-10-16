@@ -1,0 +1,9 @@
+mahotas==1.4.8
+tensorflow==1.10.0
+numpy==1.16.1
+opencv_python==3.4.3.18
+scikit_image==0.15.0
+pandas==0.24.1
+Keras==2.2.5
+skimage==0.0
+scikit_learn==0.21.3
