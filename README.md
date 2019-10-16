@@ -35,15 +35,15 @@ The models' performance on test set is reported below. The best model is a convo
 
 | Model  | Accuracy | F1-Score | Cohen’s kappa |
 | ------ | -------- | -------- | ------------- |
-| Logistics Regression | 0.543 | 0.545 | 0.484 |
-| Support Vector Machine | 0.529 | 0.530 | 0.471 |
-| Random Forest | 0.557 | 0.546 | 0.496 |
-| Gradient Boosting Machine | 0.652 | 0.639 | 0.601 |
-| K Nearest Neighbour | 0.521 | 0.510 | 0.457 |
-| Stacking | 0.674 | 0.656 | 0.627 |
-| MobileNet | 0.746 | 0.751 | 0.714 |
-| InceptionV3 | 0.782 | 0.778 | 0.754 |
-| ResNet50 | 0.775 | 0.775 | 0.747 |
+| Logistics Regression | 0.838 | 0.838 | 0.674 |
+| Support Vector Machine | 0.857 | 0.857 | 0.716 |
+| Random Forest | 0.838 | 0.838 | 0.679 |
+| Gradient Boosting Machine | 0.868 | 0.868 | 0.736 |
+| K Nearest Neighbour | 0.808 | 0.805 | 0.606 |
+| Stacking | 0.883 | 0.884 | 0.766 |
+| MobileNet | 0.905 | 0.905 | 0.808 |
+| InceptionV3 | 0.897 | 0.897 | 0.793 |
+| ResNet50 | 0.911 | 0.911 | 0.820 |
 <br/>
 
 Confusion Matrix of the best model's prediction on test set:<br/>
