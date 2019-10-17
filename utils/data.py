@@ -73,7 +73,7 @@ def get_prediction_score(y_label, y_predict):
     """
     scores = {}
     scores[config.METRIC_ACCURACY] = accuracy_score(y_label, y_predict)
-    scores[config.METRIC_F1_SCORE] = f1_score(y_label, y_predict, labels=None, average='weighted', sample_weight=None)
+    scores[config.METRIC_F1_SCORE] = f1_score(y_label, y_predict, labels=None, average='macro', sample_weight=None)
     scores[config.METRIC_COHEN_KAPPA] = cohen_kappa_score(y_label, y_predict)
     scores[config.METRIC_CONFUSION_MATRIX] = confusion_matrix(y_label, y_predict)
     
