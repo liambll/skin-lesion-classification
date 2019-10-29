@@ -9,6 +9,7 @@ The file contains functions to handle dataset and evaluation metrics on the data
 
 import os
 import numpy as np
+from keras.preprocessing import image
 import shutil
 from sklearn.metrics import accuracy_score, cohen_kappa_score, f1_score, confusion_matrix
 from utils import config
@@ -64,6 +65,36 @@ def split_train_test(input_path, output_path, test_ratio=0.0, seed=0):
                 shutil.copy(os.path.join(input_path, folder, filename), os.path.join(test_path, folder))
             else: # assign the file to train set
                 shutil.copy(os.path.join(input_path, folder, filename), os.path.join(train_path, folder))
+                
+                
+def get_image_generator(folder, batch_size, img_size=None, preprocess_input=None):
+    """Create a data generator to get batch of images in a folder and apply preprocess_input function.
+    :param folder: str, path to a folder containing images in .png, .jpg, .jpeg format
+    :param batch_size: number of images to get in each batch
+    :param img_size: a tuple (height, width) to resize image to
+    :param preprocess_input: a function to apply on the image data
+    """
+    i = 0
+    file_list = [filename for filename in os.listdir(folder)
+                 if os.path.splitext(filename)[-1].lower() in config.IMG_EXTENSION]
+    while True:
+        array_batch = []
+        for b in range(batch_size):
+            if i == len(file_list):
+                i = 0
+            filename = file_list[i]
+            i += 1
+
+            img = image.load_img(os.path.join(folder, filename), target_size=img_size)
+            img = image.img_to_array(img)
+            array_batch.append(img)
+
+        array_batch = np.array(array_batch)
+        if preprocess_input is not None:
+            array_batch = preprocess_input(array_batch)
+
+        yield array_batch
+
                 
 def get_prediction_score(y_label, y_predict):
     """Evaluate predictions using different evaluation metrics.
