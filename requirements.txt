@@ -1,7 +1,7 @@
 mahotas==1.4.8
 tensorflow==1.12.2
 numpy==1.16.1
-opencv_python==3.4.3.18
+opencv_python==3.4.7.28
 scikit_image==0.15.0
 pandas==0.24.1
 Keras==2.2.5
